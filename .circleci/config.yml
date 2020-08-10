@@ -10,9 +10,9 @@ jobs:
       - run:
           name: Build application Docker image
           command: |
-            docker build -t udai-kishan/myapp:${CIRCLE_SHA1} .
+            docker build -t 53udai/myapp:${CIRCLE_SHA1} .
       - deploy:
           name: Push application Docker image
           command: |
               docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
-              docker push udai-kishan/myapp:${CIRCLE_SHA1}
+              docker push 53udai/myapp:${CIRCLE_SHA1}
